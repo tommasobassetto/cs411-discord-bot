@@ -77,10 +77,11 @@ client.once ('ready', () => {
     console.log('Ready!');
 });
 
+// FIXME - sanitize input
 client.on ('messageCreate', async function (message) {
     if (message.author.bot) return;
 
-    // FIXME must read DMs, must work
+    // FIXME must read DMs or slash commands, must work
     if (true) {//message.channel.type === 'dm') {
         // If you DM the bot it should only be for account linking info.
         if (disc_id in unfilled_forms) {
