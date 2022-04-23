@@ -180,7 +180,7 @@ client.on ('messageCreate', async function (message) {
         var isbn = message.content.substring(6);
         var ratings_query = `SELECT Rating, Description FROM Ratings WHERE ISBN = ` + isbn + ` LIMIT 10;`;
         await runQuerySafe(ratings_query);
-        message.channel.send(sql_response);
+        message.channel.send('```' + sql_response + '```');
     }
 
     // FIXME - add/remove friends and reviews, view recommendations
