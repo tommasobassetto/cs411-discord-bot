@@ -169,12 +169,21 @@ client.on ('messageCreate', async function (message) {
             
     }
 
-    // Search DB for books
+    // Search DB for books by ISBN print out  BROWSE PAGE 
     if (message.content.startsWith(".search ")) {
-
+        isbn=message.content.split(' ')[1]
+        var query = `SELECT Title FROM Books WHERE ISBN=`+isbn+` LIMIT 10;`;
+        await runQuerySafe(query);
+        if (sql_response){
+            message.channel.send("Book selected.");
+            message.channel.createMessage('```'+sql_response+'```');
+        }else{
+            message.channel.send("No such book.");
+        }
+        
     }
 
-    // Show reviews for a single book
+    // Show reviews for a single book,select from review where ISBN, give specific book review info
     if (message.content.startsWith(".info ")) {
 
     }
