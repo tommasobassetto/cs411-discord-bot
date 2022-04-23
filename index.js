@@ -104,7 +104,7 @@ client.on ('messageCreate', async function (message) {
     // Search DB for books by ISBN print out  BROWSE PAGE 
     if (message.content.startsWith(".search ")) {
         book_name=message.content.split(' ')[1]
-        var query = `SELECT * FROM Books WHERE Title like '%`+book_name+`%' LIMIT 10;`;
+        var query = `SELECT * FROM Books WHERE Title like '%`+book_name+`%' LIMIT 3;`;
         await runQuerySafe(query);
         if (sql_response){
             message.channel.send("Book selected.");
