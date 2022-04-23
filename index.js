@@ -176,7 +176,11 @@ client.on ('messageCreate', async function (message) {
 
     // Show reviews for a single book
     if (message.content.startsWith(".info ")) {
-
+//         Alter to run if a book is not in database
+        var isbn = message.content.substring(6);
+        var ratings_query = `SELECT Rating, Description FROM Ratings WHERE ISBN = ` + isbn + ` LIMIT 10;`;
+        await runQuerySafe(ratings_query);
+        message.channel.send(sql_response);
     }
 
     // FIXME - add/remove friends and reviews, view recommendations

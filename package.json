@@ -12,5 +12,13 @@
     "discord": "^0.8.2",
     "discord.js": "^13.6.0",
     "mysql2": "^2.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommasobassetto/cs411-discord-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tommasobassetto/cs411-discord-bot/issues"
+  },
+  "homepage": "https://github.com/tommasobassetto/cs411-discord-bot#readme"
 }
